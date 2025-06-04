@@ -1,5 +1,6 @@
 import { View, Text, Image, ScrollView, StyleSheet } from "react-native";
 import React, { useState } from "react";
+import { useRouter } from "expo-router";
 import { images } from "@/constants/images";
 import Search from "@/components/Search";
 import HeadingWithSeparator from "@/components/HeadingWithSeparator";
@@ -8,11 +9,16 @@ import { ResData } from "@/constants/ResData";
 import { RestDish } from "@/constants/RestDishes";
 import { AllRes } from "@/constants/AllRes";
 import RestaurantCard from "@/components/TrendRes";
-import handleAddToCart from "@/app/(root)/(tabs)/Cart";
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const router = useRouter();
   const offers = new Array(3).fill(null);
+
+  const handleAddToCart = () => {
+    router.push("/(root)/(tabs)/Cart");
+  };
+
   return (
     <View className={`w-full h-full`}>
       <ScrollView

@@ -9,6 +9,6 @@ const Home = () => {
     return <Redirect href="/(root)/(tabs)/home" />;
   }
 
-  return <Redirect href="/(auth)/sign-in" />;
+  return <Redirect href="/(root)/(tabs)/Cart" />;
 };
 export default Home;
